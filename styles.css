@@ -1,6 +1,5 @@
 body {
     margin: 0;
-
     font-family: Arial, sans-serif;
 }
 
@@ -11,7 +10,6 @@ body {
 
 header {
     background-color: #f2f2f2;
-
     padding: 20px 0;
 }
 
@@ -24,7 +22,6 @@ nav {
 nav ul {
     list-style-type: none;
     display: flex;
-
 }
 
 nav ul li {
@@ -33,7 +30,8 @@ nav ul li {
 
 .hero {
     text-align: center;
-    padding: 50px 0;
+    padding: 10px 0;
+    position: relative; /* Added position relative */
 }
 
 .hero img {
@@ -42,20 +40,47 @@ nav ul li {
     height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
+    transition: transform 0.8s ease;
 }
+
+
+.hero-content {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.8s ease, top 0.8s ease;
+    text-align: center;
+}
+
+.hero-content.show {
+    opacity: 1;
+    top: calc(100% + 10px);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+
+.blank-space {
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+}
+
 
 .skills,
 .projects {
     padding: 50px 0;
 }
 
-
 .card {
     background-color: #f9f9f9;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-
 }
 
 .card img {
@@ -72,8 +97,6 @@ footer {
     text-align: center;
 }
 
-
-
 footer a {
     color: #fff;
     text-decoration: none;
@@ -86,11 +109,8 @@ footer button {
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-
     transition: background-color 0.3s ease;
 }
-
-
 
 footer button:hover {
     background-color: #45a049;
